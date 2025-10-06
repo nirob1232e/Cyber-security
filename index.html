@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sentinel Secure — Login</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">SS</div>
+      <div class="brand-text">
+        <h1>Sentinel Secure</h1>
+        <p class="tag">Protecting your digital perimeter</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <button id="open-login" class="btn btn-ghost">Login</button>
+      <button id="open-register" class="btn">Register</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Enterprise-ready cybersecurity portal</h2>
+      <p>Secure access, admin controls, and audit trails — a polished frontend prototype. Replace front-end auth with a secure backend for production.</p>
+      <div class="hero-actions">
+        <button id="cta-register" class="btn btn-primary">Get Started</button>
+        <button id="cta-learn" class="btn btn-outline">Learn More</button>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="card"> <h3>Access Control</h3> <p>Role-based access and admin user management.</p> </div>
+      <div class="card"> <h3>Audit Logs</h3> <p>Activity preview for administrators.</p> </div>
+      <div class="card"> <h3>Secure UX</h3> <p>Clear flows for auth and account recovery.</p> </div>
+    </section>
+
+    <section id="admin-area" class="admin-area hidden">
+      <h2>Admin Dashboard</h2>
+      <div class="admin-grid">
+        <div class="panel">
+          <h3>Users</h3>
+          <div id="users-table" class="users-table"></div>
+        </div>
+        <div class="panel">
+          <h3>Activity Log</h3>
+          <ul id="activity-log" class="activity-log"></ul>
+        </div>
+      </div>
+      <button id="admin-logout" class="btn btn-ghost">Logout</button>
+    </section>
+
+    <!-- Auth modal area (login / register / forgot) -->
+    <div id="auth-modal" class="modal hidden">
+      <div class="modal-card">
+        <button id="close-modal" class="close">×</button>
+
+        <div id="login-form" class="form">
+          <h3>Sign In</h3>
+          <input id="login-email" type="email" placeholder="Email" />
+          <input id="login-password" type="password" placeholder="Password" />
+          <div class="form-actions">
+            <button id="btn-login" class="btn btn-primary">Login</button>
+            <a href="#" id="show-forgot">Forgot password?</a>
+          </div>
+        </div>
+
+        <div id="register-form" class="form hidden">
+          <h3>Create account</h3>
+          <input id="reg-name" type="text" placeholder="Full name" />
+          <input id="reg-email" type="email" placeholder="Email" />
+          <input id="reg-password" type="password" placeholder="Password" />
+          <div class="form-actions">
+            <button id="btn-register" class="btn">Register</button>
+            <button id="to-login" class="btn btn-ghost">Back to login</button>
+          </div>
+        </div>
+
+        <div id="forgot-form" class="form hidden">
+          <h3>Reset password</h3>
+          <p>Enter your account email and we'll provide a recovery token (demo).</p>
+          <input id="forgot-email" type="email" placeholder="Email" />
+          <div class="form-actions">
+            <button id="btn-forgot" class="btn">Send recovery token</button>
+            <button id="to-login-2" class="btn btn-ghost">Back to login</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="footer-cta">
+      <small>Demo frontend — do not store production credentials here. Use proper server-side auth.</small>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
